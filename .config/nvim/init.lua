@@ -41,20 +41,11 @@ vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'FloatBorder', { bg = 'none' })
 vim.api.nvim_set_hl(0, 'Pmenu', { bg = 'none' })
 
-vim.pack.add({
-	{
-		src = "https://github.com/rose-pine/neovim",
-		name = "rose-pine",
-	},
+vim.pack.add { { src = "https://github.com/catppuccin/nvim", name = "catppuccin" } }
+require('catppuccin').setup({
+  transparent_background = true,
 })
-
-require("rose-pine").setup({
-  dim_inactive_windows = true,
-  styles = {
-    transparency = true,
-  },
-})
-vim.cmd("colorscheme rose-pine")
+vim.cmd("colorscheme catppuccin")
 
 -- ===========================================
 -- TELESCOPE
